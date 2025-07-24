@@ -23,6 +23,7 @@ const (
 	OpenRouterClaude35Haiku  ModelID = "openrouter.claude-3.5-haiku"
 	OpenRouterClaude3Opus    ModelID = "openrouter.claude-3-opus"
 	OpenRouterDeepSeekR1Free ModelID = "openrouter.deepseek-r1-free"
+	OpenRouterKimiK2         ModelID = "openrouter.kimi-k2"
 )
 
 var OpenRouterModels = map[ModelID]Model{
@@ -272,5 +273,17 @@ var OpenRouterModels = map[ModelID]Model{
 		CostPer1MOutCached: 0,
 		ContextWindow:      163_840,
 		DefaultMaxTokens:   10000,
+	},
+	OpenRouterKimiK2: {
+		ID:                 OpenRouterKimiK2,
+		Name:               "OpenRouter – Kimi K2",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "moonshotai/kimi-k2",
+		CostPer1MIn:        0,
+		CostPer1MInCached:  0,
+		CostPer1MOut:       0,
+		CostPer1MOutCached: 0,
+		ContextWindow:      200000,
+		DefaultMaxTokens:   4096,
 	},
 }
