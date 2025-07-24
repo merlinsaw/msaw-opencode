@@ -1,0 +1,20 @@
+{
+  "$schema": "./opencode-schema.json",
+  "lsp": {
+    "gopls": {
+      "command": "gopls"
+    }
+  },
+  "providers": {
+    "openrouter": {
+      "disabled": false,
+      "apiKey": "<your-api-key>",
+      "model": "moonshotai/kimi-k2",
+      "endpoint": "https://openrouter.ai/api/v1/chat/completions"
+    },
+    "github": {
+      "disabled": true,
+      "apiKey": "<your-api-key>"
+    }
+  }
+}
