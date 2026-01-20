@@ -24,6 +24,14 @@ const (
 	OpenRouterClaude3Opus    ModelID = "openrouter.claude-3-opus"
 	OpenRouterDeepSeekR1Free ModelID = "openrouter.deepseek-r1-free"
 	OpenRouterKimiK2         ModelID = "openrouter.kimi-k2"
+	OpenRouterNemotron3Nano  ModelID = "openrouter.nemotron-3-nano"
+	OpenRouterGLM47Flash     ModelID = "openrouter.glm-4.7-flash"
+	OpenRouterGPT52          ModelID = "openrouter.gpt-5.2"
+	OpenRouterGPT52Codex     ModelID = "openrouter.gpt-5.2-codex"
+	OpenRouterGemini3        ModelID = "openrouter.gemini-3"
+	OpenRouterDeepSeekV32    ModelID = "openrouter.deepseek-v3.2"
+	OpenRouterDevstral2      ModelID = "openrouter.devstral-2"
+	OpenRouterMiMoV2Flash    ModelID = "openrouter.mimo-v2-flash"
 )
 
 var OpenRouterModels = map[ModelID]Model{
@@ -285,5 +293,101 @@ var OpenRouterModels = map[ModelID]Model{
 		CostPer1MOutCached: 0,
 		ContextWindow:      200000,
 		DefaultMaxTokens:   4096,
+	},
+	OpenRouterNemotron3Nano: {
+		ID:                 OpenRouterNemotron3Nano,
+		Name:               "OpenRouter – Nemotron 3 Nano 30B A3B",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "nvidia/nemotron-3-nano-30b-a3b",
+		CostPer1MIn:        0.06,
+		CostPer1MInCached:  0,
+		CostPer1MOut:       0.24,
+		CostPer1MOutCached: 0,
+		ContextWindow:      262144,
+		DefaultMaxTokens:   128000,
+	},
+	OpenRouterGLM47Flash: {
+		ID:                 OpenRouterGLM47Flash,
+		Name:               "OpenRouter – Z.AI: GLM 4.7 Flash",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "z-ai/glm-4.7-flash",
+		CostPer1MIn:        0.07,
+		CostPer1MInCached:  0,
+		CostPer1MOut:       0.40,
+		CostPer1MOutCached: 0,
+		ContextWindow:      200000,
+		DefaultMaxTokens:   131000,
+	},
+	OpenRouterGPT52: {
+		ID:                 OpenRouterGPT52,
+		Name:               "OpenRouter – GPT 5.2",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "openai/gpt-5.2",
+		CostPer1MIn:        10.0, // Estimated pricing for frontier models
+		CostPer1MInCached:  5.0,
+		CostPer1MOut:       40.0,
+		CostPer1MOutCached: 0,
+		ContextWindow:      400000,
+		DefaultMaxTokens:   20000,
+	},
+	OpenRouterGPT52Codex: {
+		ID:                 OpenRouterGPT52Codex,
+		Name:               "OpenRouter – GPT 5.2 Codex",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "openai/gpt-5.2-codex",
+		CostPer1MIn:        8.0,
+		CostPer1MInCached:  4.0,
+		CostPer1MOut:       32.0,
+		CostPer1MOutCached: 0,
+		ContextWindow:      256000,
+		DefaultMaxTokens:   16384,
+	},
+	OpenRouterGemini3: {
+		ID:                 OpenRouterGemini3,
+		Name:               "OpenRouter – Gemini 3 Preview",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "google/gemini-3-preview",
+		CostPer1MIn:        1.25,
+		CostPer1MInCached:  0,
+		CostPer1MOut:       10.0,
+		CostPer1MOutCached: 0,
+		ContextWindow:      1000000,
+		DefaultMaxTokens:   50000,
+	},
+	OpenRouterDeepSeekV32: {
+		ID:                 OpenRouterDeepSeekV32,
+		Name:               "OpenRouter – DeepSeek V3.2",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "deepseek/deepseek-v3.2",
+		CostPer1MIn:        0.14,
+		CostPer1MInCached:  0.07,
+		CostPer1MOut:       0.28,
+		CostPer1MOutCached: 0,
+		ContextWindow:      128000,
+		DefaultMaxTokens:   8192,
+	},
+	OpenRouterDevstral2: {
+		ID:                 OpenRouterDevstral2,
+		Name:               "OpenRouter – Devstral 2 2512",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "mistralai/devstral-2-2512",
+		CostPer1MIn:        0.30,
+		CostPer1MInCached:  0.15,
+		CostPer1MOut:       0.90,
+		CostPer1MOutCached: 0,
+		ContextWindow:      256000,
+		DefaultMaxTokens:   32768,
+	},
+	OpenRouterMiMoV2Flash: {
+		ID:                 OpenRouterMiMoV2Flash,
+		Name:               "OpenRouter – MiMo-V2-Flash",
+		Provider:           ProviderOpenRouter,
+		APIModel:           "xiaomi/mimo-v2-flash",
+		CostPer1MIn:        0.05,
+		CostPer1MInCached:  0,
+		CostPer1MOut:       0.20,
+		CostPer1MOutCached: 0,
+		ContextWindow:      256000,
+		DefaultMaxTokens:   16384,
 	},
 }
